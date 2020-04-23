@@ -13,3 +13,6 @@
 /dist
 /src/assets/style.css
 /src/_includes/style.min.css
+
+# Local Netlify folder
+.netlify
