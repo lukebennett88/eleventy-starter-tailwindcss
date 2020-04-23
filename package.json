@@ -1,12 +1,12 @@
 {
-  "name": "mf-blogstarter",
+  "name": "eleventy-starter-tailwindcss",
   "version": "1.0.0",
   "description": "Eleventy + Tailwind CSS blog starter",
-  "author": "Marc FILLEUL",
+  "author": "Luke Bennett",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcfilleul/mf-blogstarter"
+    "url": "https://github.com/lukebennett88/eleventy-starter-tailwindcss"
   },
   "browserslist": [
     "defaults"
@@ -16,25 +16,34 @@
     "build:css": "cross-env NODE_ENV=production postcss src/_css/app.css -o src/_includes/css/style.min.css",
     "build:html": "cross-env ELEVENTY_ENV=production eleventy",
     "watch": "npm-run-all --parallel watch:css watch:html",
+    "lint:fix": "eslint . --fix",
     "watch:css": "postcss src/_css/app.css -o src/assets/style.css --watch",
-    "watch:html": "eleventy --serve --port=1982",
-    "dev": "del-cli dist && npm run watch"
+    "watch:html": "eleventy --serve --port=1988",
+    "dev": "del-cli dist && npm run watch",
+    "start": "yarn run dev"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@fullhuman/postcss-purgecss": "^1.3.0",
-    "@tailwindcss/ui": "^0.1.2",
-    "autoprefixer": "^9.7.2",
+    "@fullhuman/postcss-purgecss": "^2.1.2",
+    "@tailwindcss/ui": "^0.2.0",
+    "autoprefixer": "^9.7.6",
     "cross-env": "^7.0.0",
     "cssnano": "^4.1.10",
     "del-cli": "^3.0.0",
     "html-minifier": "^4.0.0",
     "luxon": "^1.21.2",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.3",
-    "tailwindcss": "^1.2.0",
-    "tailwindcss-dark-mode": "^1.1.3",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss-dark-mode": "^1.1.4",
+    "tailwindcss": "^1.3.4",
     "terser": "^4.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "prettier": "2.0.5",
+    "prettier-eslint": "9.0.1"
   }
 }
